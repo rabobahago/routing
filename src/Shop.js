@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Shop() {
   const [users, setUsers] = useState([]);
@@ -15,7 +16,9 @@ function Shop() {
       {
         users.map(user=>(
           <div key={user.id}>
-            <h2>Name:{user.name}</h2>
+            <Link to={`/shop/${user.id}`}>
+              <h2>Name:{user.name}</h2>
+            </Link>
             <p>{user.username}</p>
             <p>{user.email}</p>
             <br/>
